@@ -1,0 +1,11 @@
+{
+  "name": "@drukka/crud-controller",
+  "version": "1.0.0",
+  "description": "Generates controller with basic CRUD methods.",
+  "author": "tyukesz",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "yargs": "^13.2.4"
+  }
+}
