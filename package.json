@@ -1,9 +1,27 @@
 {
   "name": "@drukka/crud-controller",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Generates controller with basic CRUD methods.",
   "author": "tyukesz",
   "license": "MIT",
+  "main": "./crud-controller.js",
+  "preferGlobal": true,
+  "bin": {
+    "generate-controller": "./crud-controller.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drukka/crud-controller.git"
+  },
+  "keywords": [
+    "CRUD",
+    "REST",
+    "RESTAPI",
+    "Controller",
+    "ExpressJS",
+    "Sequelize",
+    "Generate"
+  ],
   "dependencies": {
     "fs": "0.0.1-security",
     "yargs": "^13.2.4"
