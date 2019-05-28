@@ -13,9 +13,9 @@ Run CLI command with _**--name {Name}**_ argument:
 ```cli
 @drukka/crud-controller --name {Name} [--overwrite [--config config.json]]
 ```
-The above command will generate a file like _{Name}Controller.js_ Replace the **{Name}** with your model name.  
-If the file already exists, then you have to use *--overwrite* argument. **WARNING!** This will overwrite your file content!  
-By default will generate the controller in _**app/controllers/v1**_ directory. You can specify your app path structure in a JSON file.
+The above command will generate a file like _{Name}Controller.js_   
+Replace the **{Name}** with your model name. If the file already exists, then you have to use *--overwrite* argument. **WARNING!** This will overwrite your file content!  
+By default it will generate the controller in _**app/controllers/v1**_ directory. You can specify your app path structure in a JSON file (see example 2).
 
 ## Controller methods  
 - index (listing every model item)
@@ -34,7 +34,7 @@ This command will result the **app/controller/v1/UserController.js** file, with 
 const models = require('../../models');
 
 exports.index = (req, res) => {
-  User.findAll({
+  models.User.findAll({
     order: [
       ['id', 'DESC'],
     ],
@@ -44,7 +44,7 @@ exports.index = (req, res) => {
 };
 
 exports.show = (req, res) => {
-  User.findOne({
+  models.User.findOne({
     where: {
       id: req.params.id
     }
@@ -54,12 +54,12 @@ exports.show = (req, res) => {
 };
 
 exports.create = (req, res) => {
-  User.create(req.body).then((result) => {
+  models.User.create(req.body).then((result) => {
     return res.json(result);
   });
 };
 exports.update = (req, res) => {
-  User.update(req.body, {
+  models.User.update(req.body, {
     where: {
       id: req.params.id
     },
@@ -69,7 +69,7 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  User.destroy({
+  models.User.destroy({
     where: {
       id: req.params.id
     },
@@ -88,12 +88,12 @@ It assumes that your app structure looks like:
     - etc.
     
 #### Example 2
-Use **--config myconfig.json** if your Node.js projects strucutre is something like:  
+Use **--config myconfig.json** if your Node.js project's structure is something like:  
 - controllers
 - models
 - etc.  
 
-Create **myconfig.json** file in the projects root directory, with the following content:
+Create **myconfig.json** file in the project's root directory, with the following content:
 ```json
 {
   "paths": {
