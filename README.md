@@ -11,7 +11,7 @@ npm i -g @drukka/crud-controller
 ## Usage
 Run CLI command with _**--name {Name}**_ argument:
 ```cli
-@drukka/crud-controller --name {Name} [--overwrite [--config config.json]]
+generate-controller --name {Name} [--overwrite [--config config.json]]
 ```
 The above command will generate a file like _{Name}Controller.js_   
 Replace the **{Name}** with your model name. If the file already exists, then you have to use *--overwrite* argument. **WARNING!** This will overwrite your file content!  
@@ -27,7 +27,7 @@ By default it will generate the controller in _**app/controllers/v1**_ directory
 ## Examples
 #### Example 1
 ```cli
-@drukka/crud-controller --name User
+generate-controller --name User
 ```
 This command will result the **app/controller/v1/UserController.js** file, with following content:  
 ```js
@@ -104,7 +104,7 @@ Create **myconfig.json** file in the project's root directory, with the followin
 ```
 Then just run the command:
 ```js
-@drukka/crud-controller --name User --config myconfig.json
+generate-controller --name User --config myconfig.json
 ```
 This command will create the **controller/UserController.js** file, with almost the same content as above, except this line:  
 ```js

@@ -1,6 +1,6 @@
 {
   "name": "@drukka/crud-controller",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generates controller with basic CRUD methods.",
   "author": "tyukesz",
   "license": "MIT",
